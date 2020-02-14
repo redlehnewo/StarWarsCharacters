@@ -33,18 +33,20 @@ const dataTable = props => {
   };
 
   const renderRow = row => {
-    const headings = props.headings.map(heading => heading.mapToProperty);
-    const entityData = headings.map((heading, index) => {
+    const entityData = props.headings.map((heading, index) => {
+      let propertyId = heading.mapToProperty;
+      let cellStyle = heading.cellStyle;
+
       let cell = null;
       if (index === 0) {
         cell = (
-          <th scope="row" key={`${heading}-${index}`}>
-            {row[heading]}
+          <th scope="row" key={`${propertyId}-${index}`}>
+            {row[propertyId]}
           </th>
         );
-      } else if (heading === "actions") {
+      } else if (propertyId === "actions") {
         cell = (
-          <td key={`${heading}-${index}`}>
+          <td key={`${propertyId}-${index}`}>
             <div
               className="btn-group btn-group-sm"
               role="group"
@@ -72,7 +74,11 @@ const dataTable = props => {
           </td>
         );
       } else {
-        cell = <td key={`${heading}-${index}`}>{row[heading]}</td>;
+        cell = (
+          <td key={`${propertyId}-${index}`} style={cellStyle}>
+            {row[propertyId]}
+          </td>
+        );
       }
       return cell;
     });

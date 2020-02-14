@@ -35,7 +35,10 @@ export class CharacterList extends Component {
         canSort: true,
         sortAsc: false,
         touched: false,
-        mapToProperty: "gender"
+        mapToProperty: "gender",
+        cellStyle: {
+          textTransform: "capitalize"
+        }
       },
       homeworld: {
         label: "Homeworld",
