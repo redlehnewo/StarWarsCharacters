@@ -1,4 +1,5 @@
 import React from "react";
+import Table from "../Table/Table";
 
 /**
  * This is just a simple data table.
@@ -90,10 +91,10 @@ const dataTable = props => {
   const tableBody = props.rows.map(renderRow);
 
   return (
-    <table className="table table-bordered table-hover">
+    <Table bordered hover size="sm" responsive>
       <thead className="thead-light">{tableHead}</thead>
       <tbody>{tableBody}</tbody>
-    </table>
+    </Table>
   );
 };
 
