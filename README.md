@@ -1,5 +1,3 @@
-# Sonalake front-end developer recruitment task
-
 The provided app is built using [create-react-app](https://github.com/facebook/create-react-app). See its documentation for more details. Your job is to implement a set of tasks listed in the Tasks section. Feel free to use all included libraries.
 
 Useful npm scripts:
